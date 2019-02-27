@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.38/browser.min.js"></script>
+    <style>
+        article > div {
+            height:50px;
+            width:50px;
+            background: #000;
+            margin:4px;
+            float:left;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <script type="text/babel">
+    var v = 20;
+    if(v)
+    {
+        v = 10;
+    }
+    console.log("value of var "+v);
+
+    let l = 20;
+    if(l)
+    {
+       let l = 10;
+        console.log("value of let inside if block "+l);
+    }
+    console.log("value of let "+l);
+    
+    for(let i = 0; i<10;i++) {
+       var box = document.createElement("div");
+       box.onclick = function(){
+           console.log("Number:"+i);
+       }
+       document.getElementsByTagName("article")[0].appendChild(box);
+    } 
+/*        for(var i = 0; i<10;i++) {
+       var box = document.createElement("div");
+       box.onclick = function(){
+           console.log("Number:"+i);
+       }
+       document.getElementsByTagName("article")[0].appendChild(box);
+    }*/
+
+    var x = 10;
+     const f1 = v => v = v+2;
+     var v1=f1(x);
+     console.log(v1);
+     
+
+    </script>
+    <article></article>
+</body>
+</html>
